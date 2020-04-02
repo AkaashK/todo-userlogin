@@ -1,9 +1,10 @@
 import React from 'react';
 import logo from '../logo.svg'
 import '../App.css'
+import History from './history'
+
 
 function login() {
-
     const user = [{
         email: 'hello@example.com',
         password: '123456',
@@ -20,7 +21,8 @@ function login() {
             let isValiduser = newUser.find((user) => password === user.password && email === user.email)
 
             if (isValiduser) {
-                alert('Welcome')
+                console.log('just in')
+                History.push('/Home')
             } else {
                 document.getElementById('email').value = ''
                 document.getElementById('password').value = ''
