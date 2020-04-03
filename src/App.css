@@ -3,20 +3,18 @@
 }
 input[type=text] {
   width: 30%;
-  height: 25%;
   border: 2px solid #008CBA;
   border-radius: 4px;
 }
 input[type=password] {
   width: 30%;
-  height: 25%;
   border: 2px solid #008CBA;
   border-radius: 4px;
 }
 .btn {
   background-color: #008CBA;
   font-size: 22px;
-  padding: 14px 40px;
+  padding: 6px 10px;
   border-radius: 12px;
   border: 2px solid rgb(0, 0, 0);
 }
@@ -34,6 +32,10 @@ input[type=password] {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.dashboard {
+  background-color: #282c34;
 }
 
 .App-header {
