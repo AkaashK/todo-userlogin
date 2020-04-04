@@ -7,6 +7,7 @@ function Home() {
     const [todolist, newTodo] = useState([])
     const todoName = useRef()
 
+    //To flip the values in the checkbox
     function toggleTodo(id) {
         const newTodolist = [...todolist]
         const todo = newTodolist.find(todo => todo.id === id)
@@ -14,6 +15,7 @@ function Home() {
         newTodo(newTodolist)
     }
 
+    //Adding a new todo to the array of todos
     function AddTodo() {
         const name = todoName.current.value
         if (name === '')
@@ -24,6 +26,7 @@ function Home() {
         todoName.current.value = null
     }
 
+    //deleting an existing todo from the array
     function deleteTodos() {
         const newTodos = todolist.filter(todo => !todo.complete)
         newTodo(newTodos)
@@ -33,10 +36,17 @@ function Home() {
         History.push('/')
     }
 
+    //handles select all todos in the list
+    function handleSelectAllTodos() {
+        const newTodolist = [...todolist]
+        newTodolist.forEach(todo => todo.complete = true)
+        newTodo(newTodolist)
+    }
+
     return (
         <div>
             <div>
-                <h2>ToDo Dashboard</h2> 
+                <h2>ToDo Dashboard</h2>
                 <button className="btn" type="button" onClick={logout}>logout</button>
             </div>
             <div className="App-header">
@@ -46,6 +56,7 @@ function Home() {
                 <button className="btn" onClick={AddTodo}>Add Todo</button> <br />
                 <button className="btn" onClick={deleteTodos}>Clear Completed Todos</button>
                 <div>{todolist.filter(todo => !todo.complete).length} left to do</div>
+                <button className="btn" onClick={handleSelectAllTodos}>select all</button>
             </div>
         </div>
     )
