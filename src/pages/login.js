@@ -2,33 +2,27 @@ import React from 'react';
 import logo from '../logo.svg'
 import '../App.css'
 import History from './history'
+import { connect } from 'react-redux'
+import AddUser from '../pages/store/actions'
 
 
-function login() {
-    const user = [{
-        email: 'hello@example.com',
-        password: '123456',
-    }]
+function login({ dispatch }, props) {
 
     function UserLogin() {
+        console.log('gettin in')
         const email = document.getElementById('email').value
         const password = document.getElementById('password').value
+
+        console.log(email, " and ", password)
 
         if (email === '' && password === '') {
             alert('Please enter all the fields')
         } else {
-            let newUser = [...user]
-            let isValiduser = newUser.find((user) => password === user.password && email === user.email)
-
-            if (isValiduser) {
-                console.log('just in')
-                History.push('/Home')
-            } else {
-                document.getElementById('email').value = ''
-                document.getElementById('password').value = ''
-                alert('No user')
-            }
-        }
+            dispatch(AddUser(email, password))
+            console.log(dispatch(AddUser(email, password)))
+            console.log(props.displayState)
+            History.push('/Home')
+        } 
     }
 
     return (
@@ -43,4 +37,12 @@ function login() {
         </div>
     )
 }
-export default login;
+
+const mapStateToProps = state => {
+    return {
+        displayState: state.map((user) => user.email)
+    }
+}
+
+export default connect(mapStateToProps)(login)
+
