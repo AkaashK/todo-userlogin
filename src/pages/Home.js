@@ -2,8 +2,9 @@ import React, { useState, useRef } from 'react';
 import TodoList from './TodoList'
 import History from './history'
 import '../App.css'
+import { connect } from 'react-redux'
 
-function Home() {
+function Home(props) {
     const [todolist, newTodo] = useState([])
     const todoName = useRef()
 
@@ -57,10 +58,17 @@ function Home() {
                 <button className="btn" onClick={deleteTodos}>Clear Completed Todos</button>
                 <div>{todolist.filter(todo => !todo.complete).length} left to do</div>
                 <button className="btn" onClick={handleSelectAllTodos}>select all</button>
+                <p>current user: {props.email}</p>
             </div>
         </div>
     )
 }
 
-export default Home;
+const mapStateToProps = state => {
+    return {
+        email: state.map((user) => user.email)
+    }
+}
+
+export default connect(mapStateToProps)(Home);
 

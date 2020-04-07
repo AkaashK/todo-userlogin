@@ -1,10 +1,9 @@
 const ADD_USER = 'Add-user'
 
-const AddUser = (email, password) => {
+const AddUser = (data) => {
     return {
         type: ADD_USER,
-        email,
-        password
+        data
     }
 }
 

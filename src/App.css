@@ -34,6 +34,12 @@ input[type=password] {
   }
 }
 
+.user {
+  position:absolute;
+  top:0;
+  right:0;
+}
+
 .dashboard {
   background-color: #282c34;
 }
