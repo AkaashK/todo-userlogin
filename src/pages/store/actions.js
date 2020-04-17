@@ -1,10 +1,10 @@
-const ADD_USER = 'Add-user'
+const ADD_USER = "Add-user";
 
 const AddUser = (data) => {
-    return {
-        type: ADD_USER,
-        data
-    }
-}
+  return {
+    type: ADD_USER,
+    data,
+  };
+};
 
-export default AddUser
+export default AddUser;
