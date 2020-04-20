@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Login renders correctly 1`] = `
+exports[`Home renders correctly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -28,7 +28,7 @@ Object {
           id="email"
           required=""
           type="text"
-          value=""
+          value="hello"
         />
          
         <br />
@@ -38,7 +38,7 @@ Object {
           id="password"
           required=""
           type="password"
-          value=""
+          value="123123"
         />
          
         <br />
@@ -52,53 +52,111 @@ Object {
         </button>
       </div>
     </div>
+    <div>
+      <div>
+        <div>
+          <h2>
+            ToDo Dashboard
+          </h2>
+          <button
+            class="btn"
+            type="button"
+          >
+            logout
+          </button>
+        </div>
+        <div
+          class="App-header"
+        >
+          <h3>
+            Add todo...
+          </h3>
+          <input
+            data-testid="addtodotest"
+            type="text"
+          />
+          <br />
+          <button
+            class="btn"
+            data-testid="Addtodo"
+          >
+            Add Todo
+          </button>
+           
+          <br />
+          <button
+            class="btn"
+          >
+            Clear Completed Todos
+          </button>
+          <div>
+            0
+             left to do
+          </div>
+          <button
+            class="btn"
+          >
+            select all
+          </button>
+          <p>
+            current user: 
+            hello
+          </p>
+        </div>
+      </div>
+    </div>
   </body>,
   "container": <div>
-    <div
-      class="App-header"
-    >
-      <img
-        alt=""
-        class="App-logo"
-        src="logo.svg"
-      />
-      <h2
-        class="title"
+    <div>
+      <div>
+        <h2>
+          ToDo Dashboard
+        </h2>
+        <button
+          class="btn"
+          type="button"
+        >
+          logout
+        </button>
+      </div>
+      <div
+        class="App-header"
       >
-        SIGN UP
-      </h2>
-      <p
-        data-testid="alertmsg"
-        id="alert"
-      />
-      email
-      <input
-        data-testid="emailTest"
-        id="email"
-        required=""
-        type="text"
-        value=""
-      />
-       
-      <br />
-      password
-      <input
-        data-testid="passTest"
-        id="password"
-        required=""
-        type="password"
-        value=""
-      />
-       
-      <br />
-      <button
-        class="btn"
-        data-testid="button"
-        id="loginbtn"
-        type="button"
-      >
-        signup
-      </button>
+        <h3>
+          Add todo...
+        </h3>
+        <input
+          data-testid="addtodotest"
+          type="text"
+        />
+        <br />
+        <button
+          class="btn"
+          data-testid="Addtodo"
+        >
+          Add Todo
+        </button>
+         
+        <br />
+        <button
+          class="btn"
+        >
+          Clear Completed Todos
+        </button>
+        <div>
+          0
+           left to do
+        </div>
+        <button
+          class="btn"
+        >
+          select all
+        </button>
+        <p>
+          current user: 
+          hello
+        </p>
+      </div>
     </div>
   </div>,
   "debug": [Function],

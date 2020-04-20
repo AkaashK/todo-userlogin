@@ -4,7 +4,7 @@ import History from "./history";
 import "../App.css";
 import { connect } from "react-redux";
 
-function Home(props) {
+function Home({email}) {
   const [todolist, newTodo] = useState([]);
   const todoName = useRef();
 
@@ -54,9 +54,9 @@ function Home(props) {
       <div className="App-header">
         <TodoList todolist={todolist} toggleTodo={toggleTodo} />
         <h3>Add todo...</h3>
-        <input ref={todoName} type="text" />
+        <input data-testid="addtodotest" ref={todoName} type="text" />
         <br />
-        <button className="btn" onClick={AddTodo}>
+        <button data-testid="Addtodo" className="btn" onClick={AddTodo}>
           Add Todo
         </button>{" "}
         <br />
@@ -67,7 +67,7 @@ function Home(props) {
         <button className="btn" onClick={handleSelectAllTodos}>
           select all
         </button>
-        <p>current user: {props.email}</p>
+        {email && <p>current user: {email}</p>}
       </div>
     </div>
   );
