@@ -1,122 +1,124 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home renders correctly 1`] = `
+exports[`SignUp renders correctly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div>
-        <div>
-          <h2>
-            ToDo Dashboard
-          </h2>
-          <button
-            class="btn"
-            type="button"
-          >
-            logout
-          </button>
-        </div>
-        <div
-          class="App-header"
-        >
-          <p
-            data-testid="fortest"
-            id="id"
-          />
-          <h3>
-            Add todo...
-          </h3>
-          <input
-            data-testid="addtodotest"
-            type="text"
-          />
-          <br />
-          <button
-            class="btn"
-            data-testid="Addtodo"
-          >
-            Add Todo
-          </button>
-           
-          <br />
-          <button
-            class="btn"
-            data-testid="cleartestbtn"
-          >
-            Clear Completed Todos
-          </button>
-          <div>
-            0
-             left to do
-          </div>
-          <button
-            class="btn"
-          >
-            select all
-          </button>
-          <p>
-            current user: 
-          </p>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div>
-      <div>
-        <h2>
-          ToDo Dashboard
-        </h2>
-        <button
-          class="btn"
-          type="button"
-        >
-          logout
-        </button>
-      </div>
       <div
         class="App-header"
       >
-        <p
-          data-testid="fortest"
-          id="id"
+        <img
+          alt=""
+          class="App-logo"
+          src="logo.svg"
         />
-        <h3>
-          Add todo...
-        </h3>
-        <input
-          data-testid="addtodotest"
-          type="text"
-        />
-        <br />
-        <button
-          class="btn"
-          data-testid="Addtodo"
+        <h2
+          class="title"
         >
-          Add Todo
-        </button>
+          SIGN UP
+        </h2>
+        <p
+          data-testid="alertmsg"
+          id="alert"
+        />
+        Name
+        <input
+          data-testid="nameTest"
+          id="name"
+          required=""
+          type="text"
+          value=""
+        />
+         
+        <br />
+        email
+        <input
+          data-testid="emailTest"
+          id="email"
+          required=""
+          type="text"
+          value=""
+        />
+         
+        <br />
+        password
+        <input
+          data-testid="passTest"
+          id="password"
+          required=""
+          type="password"
+          value=""
+        />
          
         <br />
         <button
           class="btn"
-          data-testid="cleartestbtn"
+          data-testid="button"
+          id="loginbtn"
+          type="button"
         >
-          Clear Completed Todos
+          signup
         </button>
-        <div>
-          0
-           left to do
-        </div>
-        <button
-          class="btn"
-        >
-          select all
-        </button>
-        <p>
-          current user: 
-        </p>
       </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="App-header"
+    >
+      <img
+        alt=""
+        class="App-logo"
+        src="logo.svg"
+      />
+      <h2
+        class="title"
+      >
+        SIGN UP
+      </h2>
+      <p
+        data-testid="alertmsg"
+        id="alert"
+      />
+      Name
+      <input
+        data-testid="nameTest"
+        id="name"
+        required=""
+        type="text"
+        value=""
+      />
+       
+      <br />
+      email
+      <input
+        data-testid="emailTest"
+        id="email"
+        required=""
+        type="text"
+        value=""
+      />
+       
+      <br />
+      password
+      <input
+        data-testid="passTest"
+        id="password"
+        required=""
+        type="password"
+        value=""
+      />
+       
+      <br />
+      <button
+        class="btn"
+        data-testid="button"
+        id="loginbtn"
+        type="button"
+      >
+        signup
+      </button>
     </div>
   </div>,
   "debug": [Function],

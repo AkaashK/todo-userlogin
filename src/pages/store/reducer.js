@@ -7,6 +7,4 @@ const reducer = (state = [], action) => {
   }
 };
 
-// export const activateUser = state => state.a
-
 export default reducer;

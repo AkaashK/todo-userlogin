@@ -2,23 +2,20 @@ import React, { useState } from "react";
 import logo from "../logo.svg";
 import "../App.css";
 import History from "./history";
-import { Redirect } from "react-router-dom";
-import { connect } from 'react-redux'
+import store from "./store/store";
+import AddUser from "./store/actions";
 
-export function Login({emailState, passwordState}) {
-  const [user, setUser] = useState({ email: "", password: "" });
+function SignUp() {
+  const [user, setUser] = useState({ name: "", email: "", password: "" });
 
-  const { email, password } = user;
+  const { email, password, name } = user;
 
-  function signin() {
-    if (email === emailState && password === passwordState) {
-      History.push("/Home");
-    } else if (email === "" || password === "") {
+  function signup() {
+    if (name === "" || email === "" || password === "") {
       document.getElementById("alert").innerHTML = "please enter all fields";
     } else {
-      document.getElementById("alert").innerHTML =
-        "please signup and continue login";
-      return <Redirect to="/" />;
+      store.dispatch(AddUser({ name, email, password }));
+      History.push("/login");
     }
   }
 
@@ -30,12 +27,22 @@ export function Login({emailState, passwordState}) {
   return (
     <div className="App-header">
       <img src={logo} className="App-logo" alt=""></img>
-      <h2 className="title">SIGN IN</h2>
-      <p id="alert" data-testid="alertmsglogin"></p>
+      <h2 className="title">SIGN UP</h2>
+      <p id="alert" data-testid="alertmsg"></p>
+      Name
+      <input
+        id="name"
+        data-testid="nameTest"
+        type="text"
+        value={name}
+        onChange={handleChange("name")}
+        required
+      />{" "}
+      <br />
       email
       <input
         id="email"
-        data-testid="emailtestlogin"
+        data-testid="emailTest"
         type="text"
         value={email}
         onChange={handleChange("email")}
@@ -45,7 +52,7 @@ export function Login({emailState, passwordState}) {
       password
       <input
         id="password"
-        data-testid="passtestlogin"
+        data-testid="passTest"
         type="password"
         value={password}
         onChange={handleChange("password")}
@@ -53,23 +60,16 @@ export function Login({emailState, passwordState}) {
       />{" "}
       <br />
       <button
-        data-testid="buttonlogin"
+        data-testid="button"
         id="loginbtn"
         className="btn"
         type="button"
-        onClick={signin}
+        onClick={signup}
       >
-        signin
+        signup
       </button>
     </div>
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    emailState: state[state.length - 1].email,
-    passwordState: state[state.length - 1].password
-  };
-};
-
-export default connect(mapStateToProps)(Login)
+export default SignUp;
